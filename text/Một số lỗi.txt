@@ -1,0 +1,3 @@
+    + sai class, id, của html 
+    + dư dấu cách giá trị css
+    + phân biệt thẻ: # . chữ

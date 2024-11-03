@@ -1,0 +1,37 @@
+ Chat
+.footer {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 5rem 10%;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  gap: 3rem;
+}
+
+.footer .box-container .box h3 {
+  color: var(--white);
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.footer .box-container .box a {
+  color: var(--light-white);
+  font-size: 1.8rem; /* Giảm kích thước font để phù hợp hơn */
+  padding-bottom: 1.5rem; /* Giảm padding */
+  display: block;
+}
+
+.footer .box-container .box a i {
+  color: var(--main-color);
+  padding-right: 0.5rem;
+  transition: all 0.3s ease-in-out; /* Tăng độ mượt */
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+  color: var(--white); /* Thêm màu chuyển đổi cho icon */
+}
