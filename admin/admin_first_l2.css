@@ -1,0 +1,46 @@
+/* Tạo khoảng cách giữa phần nội dung */
+.dashboard-content {
+    padding: 40px 0;
+}
+
+/* Định dạng phần text */
+.text-content {
+    padding-right: 20px;
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Định dạng phần hình ảnh */
+.image-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo các phần cột được căn chỉnh đều và đẹp */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Responsive: Cải thiện giao diện trên thiết bị di động */
+@media (max-width: 767px) {
+    .text-content {
+        text-align: center;
+    }
+
+    .image-content {
+        text-align: center;
+    }
+}

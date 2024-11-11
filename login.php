@@ -1,17 +1,18 @@
 <?php
 // Assuming you already have a database connection
 // Replace with your actual database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "book_db";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "book_db";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-}
+// // Check connection
+// if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+// }
+include 'connect.php' ;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    if (isset($_POST['login-email']) && isset($_POST['login-pass'])) {
@@ -144,6 +145,7 @@ $conn->close();
                <label for="login-check" class="login__check-label">Remember me</label>
             </div>
             <a href="#" class="login__forgot">Forgot Password?</a>
+      
          </div>
 
          <button type="submit" class="login__button">Login</button>
@@ -190,6 +192,7 @@ $conn->close();
    </div>
 
    <script src="login/login_gpt.js"></script>
+    <script class="" ></script>
 </body>
 
 </html>

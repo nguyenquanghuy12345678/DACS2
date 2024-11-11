@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Redirect to the main page after successful insertion
 			// header("Location: index1.php");
 			header("Location: 1_Order.php");
-		
+
 			exit();
 		} else {
 			$error = "Error: " . $stmt->error;
@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="../style.css">
-	<link rel="stylesheet" href="add_book.css">
+	<link rel="stylesheet" href="admin/style.css">
+	<link rel="stylesheet" href="css/add_book.css">
 	<title>Thêm Đặt Phòng</title>
 </head>
 
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a href="admin.php" class="brand">
 			<i class='bx bxs-smile'></i>
 			<span class="text">AdminHub</span>
 		</a>
@@ -182,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		</main>
 	</section>
 
-	<script src="../script.js"></script>
+	<script src="admin/script.js"></script>
 </body>
 
 </html>

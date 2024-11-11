@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="admin/style.css">
-	<link rel="stylesheet" href="css/css_1.css">
+	<link rel="stylesheet" href="css/css_loai_1.css">
 
 	<title>AdminHub</title>
 </head>
@@ -28,23 +28,19 @@ $result = $conn->query($sql);
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a href="admin.php" class="brand">
 			<i class='bx bxs-smile'></i>
 			<span class="text">AdminHub</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<!-- <a href="#"> -->
 				<a href="1_Order.php">
-					<!-- <li class="active"> -->
-					<!-- <a href="admin/index1.php"> -->
-					<!-- nên ẩn -->
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="2_Info_people.php">
+				<a href="2_Info_user.php">
 					<i class='bx bxs-shopping-bag-alt'></i>
 					<span class="text">My Store</span>
 				</a>
@@ -114,7 +110,7 @@ $result = $conn->query($sql);
 		<!-- MAIN -->
 		<main>
 			<h2>Quản Lý Đặt Phòng</h2>
-			<button onclick="location.href='1_add_book.php'">Thêm Mới</button>
+			<button onclick="location.href='1_add_order.php'">Thêm Mới</button>
 			<table border="1">
 				<thead>
 					<tr>

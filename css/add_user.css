@@ -1,91 +1,28 @@
-/* General body styling */
-/* add_user.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
+/* Đảm bảo rằng form có không gian riêng biệt */
+main.container {
     padding: 20px;
+    margin-top: 30px;
+    background-color: #f8f9fa; /* màu nền nhẹ cho phần form */
+    border-radius: 8px; /* bo góc nhẹ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* tạo bóng cho phần form */
+    max-width: 800px; /* giới hạn chiều rộng */
+    margin-left: auto;
+    margin-right: auto; /* căn giữa */
 }
 
-/* Main section styling */
-main {
-    background-color: #fff;
+/* Tùy chỉnh cho các phần tử form bên trong */
+main.container .card {
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header styling */
-main h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-    text-align: center;
+main.container .form-control {
+    margin-bottom: 15px;
 }
 
-/* Table styling */
-main table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-main th, main td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-main th {
-    background-color: #007bff;
-    color: #fff;
-}
-
-main tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-main tr:hover {
-    background-color: #e9ecef;
-}
-
-/* Button styling */
-main button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-right: 5px;
-}
-
-main button:hover {
-    background-color: #45a049;
-}
-
-/* Error message styling */
-main .error {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-    }
-
-    main table, main th, main td {
-        font-size: 14px;
-    }
-
-    main button {
-        width: 100%;
-        margin: 10px 0;
-    }
+/* Style các nút */
+.main-container .btn-success, .main-container .btn-danger {
+    width: 45%;
 }

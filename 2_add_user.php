@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute the statement
         if ($stmt->execute()) {
             // Redirect to the main page after successful insertion
-            header("Location: index1.php");
+            header("Location: 2_Info_user.php");
             exit();
         } else {
             $error = "Error: " . $stmt->error;
@@ -52,9 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="add_user.css">
+    <link rel="stylesheet" href="css/add_user.css">
+    <link rel="stylesheet" href="admin/style.css">
+
+
+
+
     <title>Thêm Người Dùng</title>
 </head>
 
@@ -82,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <section id="sidebar">
-        <a href="#" class="brand">
+        <a href="admin.php" class="brand">
             <i class='bx bxs-smile'></i>
             <span class="text">AdminHub</span>
         </a>
@@ -161,44 +169,96 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </a>
         </nav>
         <!-- NAVBAR -->
+        <main class="container mt-5">
+            <div class="card p-4 shadow-sm">
+                <h2 class="mb-4 text-center">Thêm Người Dùng</h2>
 
-        <main>
-            <h2>Thêm Người Dùng</h2>
-            <?php if ($error): ?>
-                <p style="color: red;"><?php echo $error; ?></p>
-            <?php endif; ?>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                <label for="name">Tên:</label>
-                <input type="text" id="name" name="name" required>
+                <?php if ($error): ?>
+                    <div class="alert alert-danger"><?php echo $error; ?></div>
+                <?php endif; ?>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                    <!-- Tên -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Tên:</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Nhập tên" required>
+                    </div>
 
-                <label for="phone">Điện Thoại:</label>
-                <input type="text" id="phone" name="phone" required>
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Nhập email" required>
+                    </div>
 
-                <label for="address">Địa Chỉ:</label>
-                <input type="text" id="address" name="address" required>
+                    <!-- Số điện thoại -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Điện Thoại:</label>
+                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                    </div>
 
-                <label for="location">Vị Trí:</label>
-                <input type="text" id="location" name="location" required>
+                    <!-- Địa chỉ -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Địa Chỉ:</label>
+                        <input type="text" id="address" name="address" class="form-control" placeholder="Nhập địa chỉ" required>
+                    </div>
 
-                <label for="status">Trạng Thái:</label>
-                <input type="text" id="status" name="status" required>
+                    <!-- Vị trí -->
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Vị Trí:</label>
+                        <input type="text" id="location" name="location" class="form-control" placeholder="Nhập vị trí" required>
+                    </div>
 
-                <label for="notes">Ghi Chú:</label>
-                <textarea id="notes" name="notes"></textarea>
+                    <!-- Trạng thái -->
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Trạng Thái:</label>
+                        <select id="status" name="status" class="form-select" required>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="pending">Pending</option>
 
-                <label for="profile_image">Hình Ảnh:</label>
-                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                        </select>
+                    </div>
 
-                <button type="submit">Thêm</button>
-                <button type="button" onclick="location.href='index2.php'">Hủy</button>
-            </form>
+                    <!-- Ghi chú -->
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Ghi Chú:</label>
+                        <textarea id="notes" name="notes" class="form-control" placeholder="Nhập ghi chú"></textarea>
+                    </div>
+
+                    <!-- Hình ảnh -->
+                    <div class="mb-3">
+                        <label for="profile_image" class="form-label">Hình Ảnh:</label>
+                        <input type="file" id="profile_image" name="profile_image" class="form-control" accept="image/*">
+                        <div id="image-preview" class="mt-2">
+                            <img id="preview-img" src="#" alt="Image preview" class="img-fluid" style="display: none; width: 100px; height: auto;">
+                        </div>
+                    </div>
+
+                    <!-- Các nút -->
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="button" class="btn btn-danger" onclick="location.href='index2.php'">Hủy</button>
+                    </div>
+                </form>
+            </div>
         </main>
-    </section>
 
-    <script src="../script.js"></script>
+
+
+    </section>
+    <script>
+        // Xem trước hình ảnh khi chọn file
+        document.getElementById('profile_image').addEventListener('change', function(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var preview = document.getElementById('preview-img');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+    <script src="admin/script"></script>
 </body>
 
 </html>
