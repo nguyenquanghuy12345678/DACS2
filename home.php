@@ -25,6 +25,10 @@
             <a href="about.php">About</a>
             <a href="package.php">Package</a>
             <a href="book.php">Book</a>
+
+            <!-- thêm section mới -->
+            <!-- <a href="login.php">Login</a> -->
+            <a href="info.php" class="">Info</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </section>
@@ -140,6 +144,8 @@
                     <h3 class="">adventure & tour</h3>
                     <p class="">Discover thrilling adventures with this exclusive tour package.</p>
                     <!-- Khám phá những cuộc phiêu lưu đầy kịch tính với gói tour đặc biệt này. -->
+                    <!-- chỉ thêm tiền -->
+                    <p class="">200$</p>
                     <a href="book.php" class="btn">book now</a>
                 </div>
             </div>
@@ -151,6 +157,8 @@
                     <h3 class="">adventure & tour</h3>
                     <!-- Khám phá vẻ đẹp của thiên nhiên và những hoạt động thú vị với gói này. -->
                     <p class="">Explore the beauty of nature and exciting activities with this package.</p>
+
+                    <p class="">200$</p>
                     <a href="book.php" class="btn">book now</a>
                 </div>
             </div>
@@ -162,6 +170,7 @@
                     <h3 class="">adventure & tour</h3>
                     <!-- Bắt đầu hành trình đầy phiêu lưu và những trải nghiệm khó quên. -->
                     <p class="">Embark on a journey filled with adventure and unforgettable experiences.</p>
+                    <p class="">200$</p>
                     <a href="book.php" class="btn">book now</a>
                 </div>
             </div>
@@ -218,7 +227,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main_script.js"></script>
 </body>
 
 </html>

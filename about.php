@@ -21,14 +21,22 @@
 <body>
     <!-- header section starts -->
     <section class="header">
-        <a href="home.php" class="logo">Travel</a>
+
+        <a href="home.php" class="logo">travel.</a>
+
         <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="package.php">Package</a>
-            <a href="book.php">Book</a>
+            <a href="home.php">home</a>
+            <a href="about.php">about</a>
+            <a href="package.php">package</a>
+            <a href="book.php">book</a>
+
+            <!-- thêm section mới -->
+            <!-- <a href="login.php">Login</a> -->
+            <a href="info.php" class="">Info</a>
         </nav>
+
         <div id="menu-btn" class="fas fa-bars"></div>
+
     </section>
 
     <!-- header section -->
@@ -194,7 +202,32 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main_script.js"></script>
+
+    <!-- có thể bỏ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var swiper = new Swiper(".reviews-slider", {
+                loop: true, // Loop through the slides infinitely
+                autoplay: {
+                    delay: 2000, // 3 seconds per slide
+                    disableOnInteraction: false, // Continue autoplay even after user interaction
+                },
+                speed: 800, // Transition speed in milliseconds
+                slidesPerView: 1, // Display one slide at a time
+                spaceBetween: 20, // Space between slides
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true, // Enable pagination dots to be clickable
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        });
+    </script>
+
 </body>
 
 </html>

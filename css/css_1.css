@@ -1,0 +1,65 @@
+/* Main section styling */
+main {
+    padding: 20px;
+    background-color: #fff; /* White background for the main content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Header styling */
+main h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* Dark text color */
+}
+
+/* Button styling */    
+
+ /* NÊN THAY ĐƯỜNG DẪN TRÁNH ĐỤNG CHẠM VỚI BUTTON SEARCH */
+main button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Table styling */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between table cells */
+    margin-top: 10px; /* Space above the table */
+}
+
+th, td {
+    padding: 12px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Bottom border for table rows */
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for header */
+    color: #333; /* Dark text color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        padding: 10px; /* Reduced padding on smaller screens */
+    }
+
+    button {
+        width: 100%; /* Full width buttons on small screens */
+    }
+
+    table {
+        font-size: 14px; /* Smaller text in table */
+    }
+}

@@ -18,15 +18,25 @@
 <body>
     <!-- header section starts -->
     <section class="header">
-        <a href="home.php" class="logo">Travel</a>
+
+        <a href="home.php" class="logo">travel.</a>
+
         <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="package.php">Package</a>
-            <a href="book.php">Book</a>
+            <a href="home.php">home</a>
+            <a href="about.php">about</a>
+            <a href="package.php">package</a>
+            <a href="book.php">book</a>
+            <!-- thêm section mới -->
+            <!-- <a href="login.php">Login</a> -->
+            <a href="info.php" class="">Info</a>
         </nav>
+
         <div id="menu-btn" class="fas fa-bars"></div>
+
     </section>
+
+
+
     <div class="heading" style="background:url(images/header-bg-2.png) no-repeat">
         <h1 class="">Packages</h1>
     </div>
@@ -45,7 +55,10 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Embark on an unforgettable journey filled with thrilling adventures and breathtaking views.</p>
+
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -56,7 +69,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Explore hidden gems and create lasting memories in stunning landscapes.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -67,7 +82,10 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Dive into the heart of nature with exhilarating activities designed for adrenaline seekers.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -78,7 +96,10 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Discover the beauty of the wild while enjoying a unique blend of adventure and relaxation.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -89,7 +110,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Experience the thrill of exploration as you navigate through scenic trails and majestic mountains.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -100,7 +123,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Join us for an action-packed tour that combines excitement with discovery at every turn.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -111,7 +136,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Unleash your adventurous spirit and indulge in activities that challenge your limits.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -122,7 +149,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Reconnect with nature and immerse yourself in the serenity of breathtaking landscapes.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -133,7 +162,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Satisfy your wanderlust with a perfect mix of culture, adventure, and unforgettable experiences.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -144,7 +175,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Take the road less traveled and discover the hidden wonders of our world on this exciting tour.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -155,7 +188,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Get ready for an adventure of a lifetime where every moment is filled with excitement and discovery.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -166,7 +201,9 @@
                 <div class="content">
                     <h3>adventure & tour</h3>
                     <p>Explore diverse terrains and engage in thrilling activities that cater to all adventure enthusiasts.</p>
+                    <p class="" style="color: black;">200$</p>
                     <a href="book.php" class="btn">book now</a>
+                    <a href="info.php" class="btn">info </a>
                 </div>
             </div>
 
@@ -213,7 +250,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main_script.js"></script>
 </body>
 
 </html>

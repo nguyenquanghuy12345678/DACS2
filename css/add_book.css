@@ -1,0 +1,82 @@
+/* General body styling */
+main body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+    padding: 20px; /* Padding around the page */
+}
+
+/* Main section styling */
+main {
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the main section */
+}
+
+/* Header styling */
+main h2 {
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+}
+
+/* Form styling */
+main form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Form input styling */
+main label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+}
+
+main input[type="text"],
+main input[type="email"],
+main input[type="number"],
+main input[type="date"] {
+    padding: 10px; /* Padding inside input fields */
+    margin-bottom: 15px; /* Space below each input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Button styling */
+main button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+main button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Error message styling */
+main p {
+    color: red; /* Red color for error messages */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        padding: 15px; /* Reduced padding on smaller screens */
+    }
+
+    main input[type="text"],
+    main input[type="email"],
+    main input[type="number"],
+    main input[type="date"] {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    main button {
+        width: 100%; /* Full width buttons on small screens */
+    }
+}

@@ -1,0 +1,34 @@
+my-web-app/
+│
+├── client/                    # Thư mục chứa mã nguồn phía client
+│   ├── css/                   # Thư mục chứa file CSS
+│   │   └── styles.css         # File CSS chính
+│   ├── js/                    # Thư mục chứa file JavaScript
+│   │   └── scripts.js         # File JavaScript chính
+│   ├── index.html             # File HTML chính
+│   └── assets/                # Thư mục chứa tài sản khác (hình ảnh, font chữ, v.v.)
+│       ├── images/            # Thư mục chứa hình ảnh
+│       └── fonts/             # Thư mục chứa font
+│
+├── server/                    # Thư mục chứa mã nguồn phía server
+│   ├── config/                # Thư mục chứa các file cấu hình
+│   │   └── db.js              # Cấu hình kết nối đến MySQL
+│   ├── controllers/           # Thư mục chứa các controller
+│   │   └── userController.js   # Ví dụ về controller người dùng
+│   ├── models/                # Thư mục chứa các model
+│   │   └── userModel.js       # Ví dụ về model người dùng
+│   ├── routes/                # Thư mục chứa các định nghĩa route
+│   │   └── userRoutes.js      # Ví dụ về route người dùng
+│   ├── views/                 # Thư mục chứa các file view (nếu sử dụng server-side rendering)
+│   │   └── index.php          # File view chính
+│   ├── .env                   # File cấu hình môi trường (chứa thông tin bảo mật)
+│   ├── server.js              # File chính của ứng dụng Node.js
+│   └── package.json           # File cấu hình cho Node.js
+│
+├── php/                       # Thư mục chứa các file PHP
+│   ├── includes/              # Thư mục chứa file include
+│   │   └── header.php         # File header chung
+│   └── scripts/               # Thư mục chứa các file script PHP
+│       └── processForm.php    # Ví dụ về file xử lý form
+│
+└── README.md                  # File hướng dẫn sử dụng dự án
