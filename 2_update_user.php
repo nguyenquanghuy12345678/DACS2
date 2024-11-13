@@ -4,7 +4,7 @@ include 'connect.php';
 
 
 // Fetch existing records from user_info table
-$sql = "SELECT * FROM user_info_management";
+$sql = "SELECT * FROM user_info";
 $result = $conn->query($sql);
 
 ?>

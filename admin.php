@@ -58,7 +58,7 @@ include  'connect.php';
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="4_Notification.php">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Message</span>
 				</a>

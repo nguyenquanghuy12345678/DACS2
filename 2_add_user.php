@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Please fill in all required fields.";
     } else {
         // Prepare SQL statement
-        $sql = "INSERT INTO user_info (name, email, phone, address, location, status, notes, profile_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO user_info_management (name, email, phone, address, location, status, notes, profile_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssssssss", $name, $email, $phone, $address, $location, $status, $notes, $profile_image);
 
