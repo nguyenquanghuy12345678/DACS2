@@ -140,7 +140,7 @@ $result = $conn->query($sql);
 								<td><?php echo $row['arrivals']; ?></td>
 								<td><?php echo $row['leaving']; ?></td>
 								<td>
-									<button onclick="location.href='edit_book.php?id=<?php echo $row['id']; ?>'">Sửa</button>
+									<button onclick="location.href='1_edit_order.php?id=<?php echo $row['id']; ?>'">Sửa</button>
 									<button onclick="if(confirm('Bạn có chắc chắn muốn xóa không?')) { location.href='delete_book.php?id=<?php echo $row['id']; ?>' }">Xóa</button>
 								</td>
 							</tr>
@@ -156,7 +156,23 @@ $result = $conn->query($sql);
 		<!-- MAIN -->
 
 
-
+		<!-- <div class="modal fade" id="confirmDelete-<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Xác nhận xóa</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						Bạn có chắc chắn muốn xóa đặt phòng này?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+						<a href="delete_book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Xóa</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
 
 
 	</section>
