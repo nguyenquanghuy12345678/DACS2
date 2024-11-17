@@ -24,7 +24,6 @@ include  'connect.php';
 <body>
 
 	<style>
-		
 		.dashboard-content img {
 			max-width: 100%;
 			height: auto;
@@ -69,6 +68,15 @@ include  'connect.php';
 					<span class="text">Team</span>
 				</a>
 			</li>
+
+			<!-- thêm  -->
+			<li>
+				<a href="6_Place.php" class="menu-item">
+					<i class='bx bxs-home'></i> <!-- Changed icon -->
+					<span class="text">Place</span>
+				</a>
+			</li>
+
 		</ul>
 		<ul class="side-menu">
 			<li>
