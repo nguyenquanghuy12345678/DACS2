@@ -76,16 +76,13 @@ include  'connect.php';
 					<span class="text">Place</span>
 				</a>
 			</li>
-			<!-- thêm  -->
-			<li>
+
+            <li>
 				<a href="7_Slide.php" class="menu-item">
 					<i class='bx bx-slider'></i><!-- Changed icon -->
 					<span class="text">Slide</span>
 				</a>
 			</li>
-
-
-
 
 		</ul>
 		<ul class="side-menu">
@@ -132,43 +129,8 @@ include  'connect.php';
 		<!-- NAVBAR -->
 
 
+		<main>		
 
-
-		<!-- MAIN -->
-		<!-- <main>
-
-			<section class="dashboard-content">
-				<div class="text-content">
-					<h1>Dashboard Quản Lý</h1>
-					<p>Chào mừng bạn đến với Dashboard quản lý của AdminHub. Tại đây, bạn có thể theo dõi hoạt động, quản lý cửa hàng, và truy cập các phân tích số liệu một cách dễ dàng.</p>
-				</div>
-				<div class="image-content">
-					<img src="admin/images_admin/admin icon.jpg" alt="Dashboard Management">
-				</div>
-			</section>
-
-		</main> -->
-		<main>
-			<section class="dashboard-content">
-				<div class="container">
-					<div class="row">
-						<!-- Cột bên trái: Nội dung text -->
-						<div class="col-md-6">
-							<div class="text-content">
-								<h1>Dashboard Quản Lý</h1>
-								<p>Chào mừng bạn đến với Dashboard quản lý của AdminHub. Tại đây, bạn có thể theo dõi hoạt động, quản lý cửa hàng, và truy cập các phân tích số liệu một cách dễ dàng.</p>
-							</div>
-						</div>
-
-						<!-- Cột bên phải: Hình ảnh -->
-						<div class="col-md-6">
-							<div class="image-content">
-								<img src="admin/images_admin/admin_icon_4.jpg" alt="Dashboard Management" class="img-fluid">
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 		</main>
 
 
