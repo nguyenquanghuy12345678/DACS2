@@ -16,56 +16,60 @@
 
 <body>
     <style>
-        /* Style cho container chứa các cột */
+        /* Đảm bảo hình ảnh và nội dung được phân chia theo chiều ngang */
         .container {
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            /* Khoảng cách giữa hai cột */
-            margin-top: 30px;
+            gap: 20px;
+            margin: 20px;
         }
 
-        /* Style cho cột chứa hình ảnh */
-        .image-column {
+        /* Phần bên trái: hình ảnh */
+        .left-side {
             flex: 1;
+            /* Chiếm một nửa màn hình */
             max-width: 50%;
-            /* Giới hạn chiều rộng tối đa cho hình ảnh */
         }
 
-        .image-column img {
+        .package-image {
             width: 100%;
-            /* Hình ảnh chiếm hết chiều rộng của cột */
+            /* Chiếm toàn bộ chiều rộng của phần tử cha */
             height: auto;
-            /* Giữ tỷ lệ hình ảnh */
+            /* Giữ tỷ lệ của hình ảnh */
+            border-radius: 8px;
+            /* Bo góc cho hình ảnh */
         }
 
-        /* Style cho cột chứa thông tin chi tiết */
-        .info-column {
+        /* Phần bên phải: thông tin chi tiết */
+        .right-side {
             flex: 1;
+            /* Chiếm một nửa màn hình */
             max-width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            /* Đảm bảo padding không làm thay đổi chiều rộng */
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Thêm bóng mờ cho phần nội dung */
         }
 
-        /* Style cho các phần tử trong cột thông tin */
-        .info-column h3 {
-            font-size: 2rem;
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        h4 {
+            font-size: 18px;
+            color: #444;
+            margin-top: 20px;
             margin-bottom: 10px;
-        }
-
-        .info-column p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
-        /* Style cho các tiêu đề của phần thông tin bổ sung */
-        .info-column h4 {
-            font-size: 1.3rem;
-            margin-top: 20px;
-        }
-
-        .info-column img {
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
         }
     </style>
 
@@ -90,72 +94,100 @@
     <section class="packages">
         <h1 class="heading-title">Infomation Details</h1>
         <div class="box-container">
-
             <?php
-            include "connect.php";
+            include "connect.php"; // Kết nối với cơ sở dữ liệu
 
-            // Lấy ID của package từ URL
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
+            // Lấy ID từ URL
+            if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+                $id = intval($_GET['id']); // Ép kiểu ID thành số nguyên để bảo mật
+            } else {
+                echo "Invalid ID."; // Nếu không có ID hợp lệ, hiển thị thông báo lỗi
+                exit;
+            }
 
-                // Truy vấn lấy dữ liệu kết hợp từ bảng packages và information_details theo id
-                $sql = "
-            SELECT p.*, i.description AS detail_description, i.detailed_activities, i.images, i.additional_info
-            FROM packages p
-            JOIN information_details i ON p.id = i.package_id
-            WHERE p.id = ?";
+            // Truy vấn thông tin từ bảng `packages` theo ID
+            $sql_package = "SELECT id, name, description AS package_description, price, image_url, destination, available_slots, start_date, end_date 
+FROM packages
+WHERE id = ?";
 
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("i", $id); // Truyền tham số ID vào câu truy vấn
-                $stmt->execute();
-                $result = $stmt->get_result();
+            // Truy vấn thông tin từ bảng `information_details` theo ID
+            $sql_info = "SELECT description AS info_description, detailed_activities, additional_info
+FROM information_details
+WHERE package_id = ?";
 
-                if ($result->num_rows > 0) {
-                    // Lấy dữ liệu từ cơ sở dữ liệu và hiển thị
-                    $row = $result->fetch_assoc();
+            // Truy vấn từ bảng `packages`
+            $stmt_package = $conn->prepare($sql_package);
+            if ($stmt_package) {
+                // Gắn ID vào câu truy vấn
+                $stmt_package->bind_param("i", $id);
+                $stmt_package->execute();
+                $result_package = $stmt_package->get_result();
+
+                // Kiểm tra nếu có kết quả từ bảng packages
+                if ($result_package->num_rows > 0) {
+                    $row_package = $result_package->fetch_assoc();
                     echo '<div class="container">';
 
-                    // Cột Hình ảnh
-                    echo '<div class="image-column">';
-                    // Hiển thị hình ảnh từ cả bảng packages và information_details
-                    echo '<img src="images/' . $row['image_url'] . '" alt="Package Image" style="width: 100%;">';
+                    // Bố cục Flexbox: Hình ảnh chiếm nửa màn hình
+                    echo '<div class="left-side">';
+                    echo '<img src="images/' . htmlspecialchars($row_package['image_url']) . '" alt="Package Image" class="package-image">';
                     echo '</div>';
 
-                    // Cột Thông tin chi tiết
-                    echo '<div class="info-column">';
-                    echo '<h3>' . $row['name'] . '</h3>';
-                    echo '<p><strong>Description:</strong> ' . $row['description'] . '</p>';
-                    echo '<p><strong>Price:</strong> $' . $row['price'] . '</p>';
-                    echo '<p><strong>Destination:</strong> ' . $row['destination'] . '</p>';
-                    echo '<p><strong>Available Slots:</strong> ' . $row['available_slots'] . '</p>';
-                    echo '<p><strong>Start Date:</strong> ' . $row['start_date'] . '</p>';
-                    echo '<p><strong>End Date:</strong> ' . $row['end_date'] . '</p>';
+                    // Nội dung chiếm nửa màn hình còn lại
+                    echo '<div class="right-side">';
+                    echo '<h2>' . htmlspecialchars($row_package['name']) . '</h2>';
+                    echo '<p><strong>Price:</strong> ' . htmlspecialchars($row_package['price']) . '</p>';
+                    echo '<p><strong>Destination:</strong> ' . htmlspecialchars($row_package['destination']) . '</p>';
+                    echo '<p><strong>Available Slots:</strong> ' . htmlspecialchars($row_package['available_slots']) . '</p>';
+                    echo '<p><strong>Start Date:</strong> ' . htmlspecialchars($row_package['start_date']) . '</p>';
+                    echo '<p><strong>End Date:</strong> ' . htmlspecialchars($row_package['end_date']) . '</p>';
 
-                    // Thông tin bổ sung từ bảng information_details
-                    if (!empty($row['additional_info'])) {
-                        echo '<h4>Additional Information</h4>';
-                        echo '<p>' . $row['additional_info'] . '</p>';
+                    // Truy vấn thông tin từ bảng `information_details`
+                    $stmt_info = $conn->prepare($sql_info);
+                    if ($stmt_info) {
+                        $stmt_info->bind_param("i", $id);
+                        $stmt_info->execute();
+                        $result_info = $stmt_info->get_result();
+
+                        // Kiểm tra nếu có thông tin từ bảng `information_details`
+                        if ($result_info->num_rows > 0) {
+                            $row_info = $result_info->fetch_assoc();
+                            if (!empty($row_info['info_description'])) {
+                                echo '<h4>Package Description:</h4>';
+                                echo '<p>' . nl2br(htmlspecialchars($row_info['info_description'])) . '</p>';
+                            }
+
+                            if (!empty($row_info['detailed_activities'])) {
+                                echo '<h4>Detailed Activities:</h4>';
+                                echo '<p>' . nl2br(htmlspecialchars($row_info['detailed_activities'])) . '</p>';
+                            }
+
+                            if (!empty($row_info['additional_info'])) {
+                                echo '<h4>Additional Information:</h4>';
+                                echo '<p>' . nl2br(htmlspecialchars($row_info['additional_info'])) . '</p>';
+                            }
+                        } else {
+                            echo "<p>No additional information available.</p>";
+                        }
+                        $stmt_info->close();
                     }
 
-                    if (!empty($row['detailed_activities'])) {
-                        echo '<h4>Detailed Activities</h4>';
-                        echo '<p>' . $row['detailed_activities'] . '</p>';
-                    }
-
-                    // if (!empty($row['images'])) {
-                    //     echo '<h4>Activity Images</h4>';
-                    //     echo '<img src="images/' . $row['images'] . '" alt="Activity Image" style="width: 100%;">';
-                    // }
-
-                    echo '</div>';  // end of info-column
-                    echo '</div>';  // end of container
+                    echo '</div>'; // Kết thúc right-side
+                    echo '</div>'; // Kết thúc container
                 } else {
-                    echo '<p>No details available for this package.</p>';
+                    echo "<p>No package details found.</p>"; // Nếu không tìm thấy dữ liệu
                 }
+                $stmt_package->close();
             } else {
-                echo '<p>No package selected.</p>';
+                echo "<p>Error preparing the query: " . $conn->error . "</p>"; // Lỗi khi chuẩn bị truy vấn
             }
+
+            // Đóng kết nối cơ sở dữ liệu
+            $conn->close();
             ?>
+
+
+
 
 
         </div>

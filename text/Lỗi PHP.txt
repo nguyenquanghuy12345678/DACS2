@@ -3,3 +3,6 @@ Thêm kiểm tra lỗi đầu vào: Kiểm tra các trường hợp dữ liệu 
 Thêm htmlspecialchars: Bảo vệ chống lại các lỗi XSS khi hiển thị dữ liệu trên form.
 Fix lỗi URL xử lý POST: Giữ id trong URL để tránh mất thông tin khi nộp form.
 Tối ưu hóa giao diện: Sử dụng Bootstrap để dễ dàng chỉnh sửa và hiện đại hơn.
+
+
+Sai câu lệnh sql đặc biệt truy vấn 2 bảng ; phải dùng các khóa với nhau để có thể liên kết chúng
