@@ -51,7 +51,7 @@ include  'connect.php';
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="3_Content.php">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
@@ -63,7 +63,7 @@ include  'connect.php';
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="5_Chart.php">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
 				</a>

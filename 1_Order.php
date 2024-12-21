@@ -102,7 +102,7 @@ $result = $conn->query($sql);
 				<span class="num">8</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="images_admin/icon_comunication.png">
+				<img src="admin/images_admin/icon_comunication.png">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -141,7 +141,7 @@ $result = $conn->query($sql);
 								<td><?php echo $row['leaving']; ?></td>
 								<td>
 									<button onclick="location.href='1_edit_order.php?id=<?php echo $row['id']; ?>'">Sửa</button>
-									<button onclick="if(confirm('Bạn có chắc chắn muốn xóa không?')) { location.href='delete_book.php?id=<?php echo $row['id']; ?>' }">Xóa</button>
+									<button onclick="if(confirm('Bạn có chắc chắn muốn xóa không?')) { location.href='1_delete_order.php?id=<?php echo $row['id']; ?>' }">Xóa</button>
 								</td>
 							</tr>
 						<?php endwhile; ?>
@@ -155,30 +155,30 @@ $result = $conn->query($sql);
 		</main>
 		<!-- MAIN -->
 
-
-		<!-- <div class="modal fade" id="confirmDelete-<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Xác nhận xóa</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						Bạn có chắc chắn muốn xóa đặt phòng này?
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-						<a href="delete_book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Xóa</a>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
 	</section>
-
-
 	<script src="admin/script.js"></script>
+	<script>
+		function deleteOrder(orderId) {
+			if (confirm('Bạn có chắc chắn muốn xóa không?')) {
+				fetch(`delete_book.php?id=${orderId}`, {
+						method: 'GET',
+					})
+					.then(response => response.text())
+					.then(data => {
+						if (data.trim() === 'success') {
+							alert('Xóa thành công!');
+							document.querySelector(`#order-row-${orderId}`).remove();
+						} else {
+							alert('Xóa thất bại. Vui lòng thử lại!');
+						}
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						alert('Đã xảy ra lỗi. Vui lòng thử lại!');
+					});
+			}
+		}
+	</script>
 </body>
 
 </html>

@@ -1,0 +1,80 @@
+/* Phần nội dung chính */
+main {
+    margin-left: 260px; /* Để tránh bị khuất bởi sidebar */
+    padding: 30px;
+}
+
+/* Container chính của form */
+main .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề chính */
+main h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Nhãn của các trường input */
+main form .form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Các trường nhập liệu (input và textarea) */
+main form .form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Hiệu ứng khi người dùng focus vào trường nhập liệu */
+main form .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Nút submit */
+main button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+/* Hiệu ứng khi hover vào nút submit */
+main button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Thông báo thành công hoặc lỗi */
+main form .success-message {
+    color: green;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+main form .error-message {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}

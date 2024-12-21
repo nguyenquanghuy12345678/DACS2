@@ -59,36 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/add_user.css">
     <link rel="stylesheet" href="admin/style.css">
-
-
-
-
     <title>Thêm Người Dùng</title>
 </head>
 
 <body>
     <!-- SIDEBAR -->
-    <!-- <section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">AdminHub</span>
-		</a>
-		<ul class="side-menu top">
-			<li><a href="#"><i class='bx bxs-dashboard'></i><span class="text">Dashboard</span></a></li>
-			<li><a href="#"><i class='bx bxs-group'></i><span class="text">User Management</span></a></li>
-		</ul>
-		<ul class="side-menu">
-			<li><a href="#"><i class='bx bxs-cog'></i><span class="text">Settings</span></a></li>
-			<li><a href="#" class="logout"><i class='bx bxs-log-out-circle'></i><span class="text">Logout</span></a></li>
-		</ul>
-	</section> -->
-
-    <!-- SIDEBAR -->
-
-
-
-
-
     <section id="sidebar">
         <a href="admin.php" class="brand">
             <i class='bx bxs-smile'></i>
@@ -165,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="num">8</span>
             </a>
             <a href="#" class="profile">
-                <img src="../images_admin/icon_comunication.png">
+                <img src="admin/images_admin/icon_comunication.png">
             </a>
         </nav>
         <!-- NAVBAR -->
@@ -242,9 +217,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
         </main>
-
-
-
     </section>
     <script>
         // Xem trước hình ảnh khi chọn file

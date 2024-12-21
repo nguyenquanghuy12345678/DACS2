@@ -1,7 +1,6 @@
 <?php
 include  'connect.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -152,8 +151,6 @@ include  'connect.php';
     </section>
     <!-- SIDEBAR -->
 
-
-
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
@@ -178,81 +175,68 @@ include  'connect.php';
         </nav>
 
         <main class="container my-5">
-            <h2 class="text-center mb-4">Quản Lý Địa Điểm</h2>
-            <br>
+            <h2 class="text-center mb-4">Quản Lý Chuyến Du Lịch</h2>
 
+            <!-- Nút Thêm Mới Chuyến Du Lịch -->
             <div class="mb-3">
-                <a href="add_place.php" class="btn btn-primary">
+                <a href="6_add_places.php" class="btn btn-primary">
                     <i class="bx bxs-plus-circle"></i>
-                    <!-- thêm i -->
-                    Thêm Mới Địa Điểm
+                    Thêm Mới Chuyến Du Lịch
                 </a>
             </div>
 
-            <div class="mb-3">
-                <a href="edit_place.php" class="btn btn-warning">
-                    <i class="bx bxs-edit"></i> <!-- Biểu tượng chỉnh sửa -->
-                    Chỉnh Sửa Địa Điểm
-                </a>
-            </div>
-
-
-            <br>
+            <!-- Bảng Quản Lý Chuyến Du Lịch -->
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Tên Địa Điểm</th>
+                        <th>Tên Chuyến</th>
                         <th>Mô Tả</th>
-                        <th>Hình Ảnh</th>
-                        <th>Địa Chỉ</th>
-                        <th>Đánh Giá</th>
                         <th>Giá</th>
-                        <th>Trạng Thái</th>
-                        <th>Loại Dịch Vụ</th>
-                        <th>Hạn Đặt</th>
-                        <th>Ngày Có Sẵn</th>
-                        <th>Sức Chứa</th>
-                        <th>Thông Tin Liên Hệ</th>
+                        <th>Hình Ảnh</th>
+                        <th>Địa Điểm</th>
+                        <th>Số Lượng Slot</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Ngày Kết Thúc</th>
+                        <th>Ngày Tạo</th>
+                        <th>Ngày Cập Nhật</th>
                         <th>Hành Động</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    // Kết nối đến cơ sở dữ liệu và lấy thông tin các địa điểm
-                    $result = $conn->query("SELECT * FROM places");
+                    // Kết nối đến cơ sở dữ liệu và lấy thông tin các chuyến du lịch
+                    $result = $conn->query("SELECT * FROM packages ORDER BY id ASC");
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['name'] . "</td>";
                         echo "<td>" . substr($row['description'], 0, 100) . "...</td>";
-                        echo "<td><img src='" . $row['image_url'] . "' alt='" . $row['name'] . "' class='img-thumbnail' width='100'></td>";
-                        echo "<td>" . $row['location'] . "</td>";
-                        echo "<td>" . $row['rating'] . "</td>";
                         echo "<td>" . number_format($row['price'], 2) . " VND</td>";
-                        echo "<td>" . $row['status'] . "</td>";
-                        echo "<td>" . $row['service_type'] . "</td>";
-                        echo "<td>" . $row['booking_deadline'] . "</td>";
-                        echo "<td>" . $row['available_from'] . " đến " . $row['available_to'] . "</td>";
-                        echo "<td>" . $row['max_capacity'] . "</td>";
-                        echo "<td>" . $row['contact_info'] . "</td>";
+                        // echo "<td><img src='" . $row['image_url'] . "' alt='" . $row['name'] . "' class='img-thumbnail' width='100'></td>";
+                        echo "<td><img src='images/" . $row['image_url'] . "' alt='" . $row['name'] . "' class='img-thumbnail' width='100'></td>";
+
+                        echo "<td>" . $row['destination'] . "</td>";
+                        echo "<td>" . $row['available_slots'] . "</td>";
+                        echo "<td>" . $row['start_date'] . "</td>";
+                        echo "<td>" . $row['end_date'] . "</td>";
+                        echo "<td>" . $row['created_at'] . "</td>";
+                        echo "<td>" . $row['updated_at'] . "</td>";
                         echo "<td>
-                <a href='edit_place.php?id=" . $row['id'] . "' class='btn btn-warning btn-sm'>Sửa</a>
-                <a href='delete_place.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Bạn có chắc chắn muốn xóa không?\")'>Xóa</a>
-            </td>";
+                        <a href='6_edit_places.php?id=" . $row['id'] . "' class='btn btn-warning btn-sm'>Sửa</a>
+                       
+                        <a href='6_delete_places.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Bạn có chắc chắn muốn xóa không?\")'>Xóa</a>
+                    </td>";
                         echo "</tr>";
                     }
                     ?>
+                     <!-- <a href='duplicate_trip.php?id=" . $row['id'] . "' class='btn btn-info btn-sm'>Chép</a> -->
                 </tbody>
             </table>
         </main>
 
 
-
-
     </section>
-
-
     <script src="admin/script.js"></script>
 </body>
 

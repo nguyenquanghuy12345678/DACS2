@@ -148,7 +148,7 @@ $result = $conn->query($sql);
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <button onclick="location.href='edit_user.php?id=<?php echo $row['id']; ?>'">Sửa</button>
+                                    <button onclick="location.href='2_update_user.php?id=<?php echo $row['id']; ?>'">Sửa</button>
                                     <button onclick="if(confirm('Bạn có chắc chắn muốn xóa không?')) { location.href='delete_user.php?id=<?php echo $row['id']; ?>' }">Xóa</button>
                                 </td>
                             </tr>

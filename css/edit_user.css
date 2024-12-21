@@ -1,0 +1,28 @@
+/* Đảm bảo rằng form có không gian riêng biệt */
+main.container {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #f8f9fa; /* màu nền nhẹ cho phần form */
+    border-radius: 8px; /* bo góc nhẹ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* tạo bóng cho phần form */
+    max-width: 800px; /* giới hạn chiều rộng */
+    margin-left: auto;
+    margin-right: auto; /* căn giữa */
+}
+
+/* Tùy chỉnh cho các phần tử form bên trong */
+main.container .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main.container .form-control {
+    margin-bottom: 15px;
+}
+
+/* Style các nút */
+.main-container .btn-success, .main-container .btn-danger {
+    width: 45%;
+}
