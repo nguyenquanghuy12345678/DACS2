@@ -15,6 +15,11 @@
 </head>
 
 <body>
+    <style>
+
+        
+    </style>
+
     <!-- header section starts -->
     <section class="header">
         <a href="home.php" class="logo">travel.</a>
@@ -55,7 +60,11 @@
                     echo '<h3>' . $row['name'] . '</h3>'; // title -> name //
                     echo '<p>' . $row['description'] . '</p>';
                     echo '<p style="color: black;">$' . $row['price'] . '</p>';
-                    echo '<a href="book.php?id=' . $row['id'] . '" class="btn">book now</a>';
+                    // echo '<a href="book.php?id=' . $row['id'] . '" class="btn">book now</a>';
+                    // echo '<a href="package_booking.php?id=' . $row['id'] . '" class="btn">book now</a>';
+                    
+                    echo '<a href="package_booking.php?id=' . $row['id'] . '" class="btn">book now</a>';
+
                     echo '<a href="info.php?id=' . $row['id'] . '" class="btn">info</a>';
                     echo '</div>';
                     echo '</div>';

@@ -104,7 +104,7 @@ $result = $conn->query($sql);
                 <span class="num">8</span>
             </a>
             <a href="#" class="profile">
-                <img src="images_admin/icon_comunication.png">
+                <img src="admin/images_admin/icon_comunication.png">
             </a>
         </nav>
         <!-- NAVBAR -->
