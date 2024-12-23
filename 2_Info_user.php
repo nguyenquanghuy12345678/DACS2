@@ -1,33 +1,24 @@
 <?php
 
 include 'connect.php';
-
-
 // Fetch existing records from user_info table
 $sql = "SELECT * FROM user_info_management";
 $result = $conn->query($sql);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
     <link rel="stylesheet" href="admin/style.css">
     <link rel="stylesheet" href="css/css_loai_1.css">
-
     <title>AdminHub</title>
 </head>
-
 <body>
-
-
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="admin.php" class="brand">
@@ -82,9 +73,6 @@ $result = $conn->query($sql);
         </ul>
     </section>
     <!-- SIDEBAR -->
-
-
-
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
@@ -108,7 +96,6 @@ $result = $conn->query($sql);
             </a>
         </nav>
         <!-- NAVBAR -->
-
         <!-- MAIN -->
         <main>
             <h2>Thông Tin Người Dùng</h2>
@@ -163,13 +150,7 @@ $result = $conn->query($sql);
         </main>
         <!-- MAIN -->
 
-
-
-
-
     </section>
-
-
     <script src="script.js"></script>
 </body>
 

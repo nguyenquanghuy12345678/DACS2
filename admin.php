@@ -37,9 +37,7 @@ include  'connect.php';
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<!-- <li class="active"> -->
 				<a href="1_Order.php">
-					<!-- đường dẫn tuyệt đối -->
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -68,26 +66,30 @@ include  'connect.php';
 					<span class="text">Team</span>
 				</a>
 			</li>
-
-			<!-- thêm  -->
 			<li>
 				<a href="6_Place.php" class="menu-item">
-					<i class='bx bxs-home'></i> <!-- Changed icon -->
+					<i class='bx bxs-home'></i>
 					<span class="text">Place</span>
 				</a>
 			</li>
-			<!-- thêm  -->
 			<li>
-				<a href="7_Slide.php" class="menu-item">
-					<i class='bx bx-slider'></i><!-- Changed icon -->
-					<span class="text">Slide</span>
+				<a href="7_Order_directly.php" class="menu-item">
+					<i class='bx bx-slider'></i>
+					<span class="text">Order </span>
 				</a>
 			</li>
 
-
-
-
+			<!-- <li>
+				<a href="7_Slide.php" class="menu-item">
+					<i class='bx bx-slider'></i>
+					<span class="text">Slide</span>
+				</a>
+			</li> -->
 		</ul>
+
+
+
+
 		<ul class="side-menu">
 			<li>
 				<a href="#">
