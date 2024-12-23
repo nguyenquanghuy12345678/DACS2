@@ -369,7 +369,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var quantity = this.value;
             var pricePerSlot = <?php echo $package['price']; ?>;
             var totalPrice = quantity * pricePerSlot;
-            document.getElementById('total_price').value = totalPrice.toFixed(2);
+            // document.getElementById('total_price').value = totalPrice.toFixed(2); sai hàm về giá
+            document.getElementById('total_price').value = totalPrice;
         });
     </script>
     <script src="admin/script.js"></script>

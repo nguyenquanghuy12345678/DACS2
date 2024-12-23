@@ -283,7 +283,10 @@ include  'connect.php';
 								echo '<td>' . htmlspecialchars($row['phone_number']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['order_date']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['quantity']) . '</td>';
+								
 								echo '<td>' . number_format($row['total_price'], 2) . ' VND</td>';
+
+							    // echo '<td>' . number_format($row['total_price']) . ' VND</td>'; sai hàm 
 								echo '<td>' . htmlspecialchars($row['status']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['payment_method']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['transport_option']) . '</td>';
