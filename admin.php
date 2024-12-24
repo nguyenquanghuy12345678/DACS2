@@ -78,18 +78,7 @@ include  'connect.php';
 					<span class="text">Order </span>
 				</a>
 			</li>
-
-			<!-- <li>
-				<a href="7_Slide.php" class="menu-item">
-					<i class='bx bx-slider'></i>
-					<span class="text">Slide</span>
-				</a>
-			</li> -->
 		</ul>
-
-
-
-
 		<ul class="side-menu">
 			<li>
 				<a href="#">
@@ -106,8 +95,6 @@ include  'connect.php';
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
-
-
 
 	<!-- CONTENT -->
 	<section id="content">

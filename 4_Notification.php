@@ -100,7 +100,7 @@ include  'connect.php';
 			}
 		}
 	</style>
-	<!-- SIDEBAR -->
+
 	<section id="sidebar">
 		<a href="admin.php" class="brand">
 			<i class='bx bxs-smile'></i>
@@ -108,9 +108,7 @@ include  'connect.php';
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<!-- <li class="active"> -->
 				<a href="1_Order.php">
-					<!-- đường dẫn tuyệt đối -->
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -122,7 +120,7 @@ include  'connect.php';
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="3_Content.php">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
@@ -134,9 +132,21 @@ include  'connect.php';
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="5_Chart.php">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
+				</a>
+			</li>
+			<li>
+				<a href="6_Place.php" class="menu-item">
+					<i class='bx bxs-home'></i>
+					<span class="text">Place</span>
+				</a>
+			</li>
+			<li>
+				<a href="7_Order_directly.php" class="menu-item">
+					<i class='bx bx-slider'></i>
+					<span class="text">Order </span>
 				</a>
 			</li>
 		</ul>
@@ -155,10 +165,6 @@ include  'connect.php';
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
-
-
-
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
@@ -203,7 +209,7 @@ include  'connect.php';
 							<input type="text" class="form-control" name="tieude" id="inputSubject" placeholder="Tiêu đề" required>
 						</div>
 						<!-- xuống dòng -->
-						 <br>
+						<br>
 						<div class="form-group col-md-12">
 							<label for="editor">Nội dung</label>
 							<textarea name="content" id="editor" class="form-control" rows="5" required></textarea>

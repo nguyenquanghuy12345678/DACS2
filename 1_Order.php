@@ -26,14 +26,13 @@ $result = $conn->query($sql);
 <body>
 
 
-	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="admin.php" class="brand">
 			<i class='bx bxs-smile'></i>
 			<span class="text">AdminHub</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li>
 				<a href="1_Order.php">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
@@ -46,21 +45,33 @@ $result = $conn->query($sql);
 				</a>
 			</li>
 			<li>
-				<a href="index3.php">
+				<a href="3_Content.php">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
 			</li>
 			<li>
-				<a href="index4.php">
+				<a href="4_Notification.php">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Message</span>
 				</a>
 			</li>
 			<li>
-				<a href="index5.php">
+				<a href="5_Chart.php">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
+				</a>
+			</li>
+			<li>
+				<a href="6_Place.php" class="menu-item">
+					<i class='bx bxs-home'></i>
+					<span class="text">Place</span>
+				</a>
+			</li>
+			<li>
+				<a href="7_Order_directly.php" class="menu-item">
+					<i class='bx bx-slider'></i>
+					<span class="text">Order </span>
 				</a>
 			</li>
 		</ul>
@@ -72,14 +83,13 @@ $result = $conn->query($sql);
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
 					<span class="text">Logout</span>
 				</a>
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
 
 
 

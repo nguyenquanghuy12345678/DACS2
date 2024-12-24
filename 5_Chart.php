@@ -1,0 +1,159 @@
+<?php
+include  'connect.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Link đến CSS của Bootstrap từ CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ06PZ2P7y3JfXv38mmX7fPqAStgZyzJbVt/jzF1IbfzF5pP8lDb5fY7nx5u" crossorigin="anonymous">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="admin/style.css">
+	<link rel="stylesheet" href="admin/admin_first_l2.css">
+
+	<title>AdminHub</title>
+</head>
+
+<body>
+
+	<style>
+		main {
+			width: 100%;
+			/* max-width: 1200px; */
+			max-width: 100%;
+			/* Đặt kích thước tối đa lớn hơn */
+			/* margin: 20px auto; */
+			/* Center horizontally */
+			/* padding: 20px; */
+			background: #fff;
+			/* border-radius: 10px; */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+
+		iframe {
+			width: 100%;
+			height: 600px; 
+			/* vừa yy */
+		
+			border: none;
+			border-radius: 10px;
+		}
+
+		@media (max-width: 768px) {
+			iframe {
+				height: 300px;
+				/* Adjust height for smaller screens */
+			}
+		}
+	</style>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="admin.php" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="1_Order.php">
+					<i class='bx bxs-dashboard'></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="2_Info_user.php">
+					<i class='bx bxs-shopping-bag-alt'></i>
+					<span class="text">My Store</span>
+				</a>
+			</li>
+			<li>
+				<a href="3_Content.php">
+					<i class='bx bxs-doughnut-chart'></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="4_Notification.php">
+					<i class='bx bxs-message-dots'></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="5_Chart.php">
+					<i class='bx bxs-group'></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+			<li>
+				<a href="6_Place.php" class="menu-item">
+					<i class='bx bxs-home'></i>
+					<span class="text">Place</span>
+				</a>
+			</li>
+			<li>
+				<a href="7_Order_directly.php" class="menu-item">
+					<i class='bx bx-slider'></i>
+					<span class="text">Order </span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="logout.php" class="logout">
+					<i class='bx bxs-log-out-circle'></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="admin/images_admin/people.png">
+			</a>
+		</nav>
+
+		<main>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/XebdBw3xGSY?si=Svox74tE8HEjPEAC"
+				title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen>
+			</iframe>
+		</main>
+	</section>
+	<script src="admin/script.js"></script>
+</body>
+
+</html>

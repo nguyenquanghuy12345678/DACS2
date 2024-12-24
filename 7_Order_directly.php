@@ -126,7 +126,7 @@ include  'connect.php';
 </head>
 
 <body>
-	<!-- SIDEBAR -->
+
 	<section id="sidebar">
 		<a href="admin.php" class="brand">
 			<i class='bx bxs-smile'></i>
@@ -169,14 +169,12 @@ include  'connect.php';
 					<span class="text">Place</span>
 				</a>
 			</li>
-
 			<li>
 				<a href="7_Order_directly.php" class="menu-item">
 					<i class='bx bx-slider'></i>
 					<span class="text">Order </span>
 				</a>
 			</li>
-
 		</ul>
 		<ul class="side-menu">
 			<li>
@@ -193,9 +191,6 @@ include  'connect.php';
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
-
-
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
@@ -283,10 +278,10 @@ include  'connect.php';
 								echo '<td>' . htmlspecialchars($row['phone_number']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['order_date']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['quantity']) . '</td>';
-								
+
 								echo '<td>' . number_format($row['total_price'], 2) . ' VND</td>';
 
-							    // echo '<td>' . number_format($row['total_price']) . ' VND</td>'; sai hàm 
+								// echo '<td>' . number_format($row['total_price']) . ' VND</td>'; sai hàm 
 								echo '<td>' . htmlspecialchars($row['status']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['payment_method']) . '</td>';
 								echo '<td>' . htmlspecialchars($row['transport_option']) . '</td>';
