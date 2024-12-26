@@ -47,7 +47,7 @@
     <!-- about section start -->
     <section class="about">
         <div class="image">
-            <img src="images/about-img.jpg" alt="About our travel service" class="about-img">
+            <img src="images/huy about web.jpg" alt="About our travel service" class="about-img">
         </div>
         <div class="content">
             <h3 class="about-title">Discover the World with Us</h3>

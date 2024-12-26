@@ -217,7 +217,7 @@ include  'connect.php';
 			<!-- <section class="admin-orders"> -->
 			<h2>Manage Orders</h2>
 			<!-- <button class="add-button">Add Order</button> -->
-			<button class="add-button" onclick="window.location.href='7_add_order.php';">Add Order</button>
+			<!-- <button class="add-button" onclick="window.location.href='7_add_order.php';">Add Order</button> -->
 
 			<div class="table-container">
 				<table>
@@ -293,6 +293,8 @@ include  'connect.php';
 
 								echo '<button class="btn-delete">Delete</button>';
 								echo '<button class="btn-status">Change Status</button>';
+								echo '<button class="btn-export" onclick="exportPDF(' . htmlspecialchars(json_encode($row)) . ')">Export PDF</button>';
+								// echo '</td>';
 								echo '</td>';
 								echo '</tr>';
 							}
@@ -310,6 +312,95 @@ include  'connect.php';
 	</section>
 
 	<script src="admin/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script>
+		function exportPDF(rowData) {
+			const {
+				jsPDF
+			} = window.jspdf;
+
+			// Tạo một đối tượng jsPDF
+			const doc = new jsPDF();
+
+			// Tựa đề file PDF
+			doc.setFontSize(18);
+			doc.text("Order Details", 105, 20, {
+				align: "center"
+			});
+
+			// Thông tin chi tiết đơn hàng
+			doc.setFontSize(12);
+			const lineHeight = 8;
+			const startX = 20;
+			let startY = 40;
+
+			const fields = [
+				["Order ID", rowData.order_id],
+				["Package Name", rowData.package_name],
+				["Customer Name", rowData.customer_name],
+				["Email", rowData.customer_email],
+				["Phone", rowData.phone_number],
+				["Order Date", rowData.order_date],
+				["Quantity", rowData.quantity],
+				["Total Price", `${rowData.total_price} VND`],
+				["Status", rowData.status],
+				["Payment Method", rowData.payment_method],
+				["Transport", rowData.transport_option],
+				["Insurance", rowData.insurance ? "Yes" : "No"],
+				["Notes", rowData.notes || "N/A"]
+			];
+
+			// Ghi thông tin chi tiết vào PDF
+			fields.forEach(([label, value]) => {
+				doc.text(`${label}:`, startX, startY);
+				doc.text(value.toString(), startX + 50, startY);
+				startY += lineHeight;
+			});
+
+			// Chèn hình ảnh vào PDF
+			const imageSelector = document.querySelector(".profile img"); // Lấy phần tử hình ảnh từ DOM
+			if (imageSelector) {
+				html2canvas(imageSelector).then((canvas) => {
+					const imgData = canvas.toDataURL("image/png");
+					doc.addImage(imgData, "PNG", 20, startY + 10, 50, 50); // Chèn hình vào PDF
+					startY += 60; // Cập nhật vị trí sau khi thêm hình ảnh
+
+					// Xuất file PDF
+					doc.save(`Order_${rowData.order_id}.pdf`);
+				});
+			} else {
+				alert("No image found to export!");
+			}
+		}
+	</script>
+	<!-- <script>
+		function exportPDF(rowData) {
+			const {
+				jsPDF
+			} = window.jspdf;
+			const doc = new jsPDF();
+
+			let content = `
+		Order ID: ${rowData.order_id}
+		Package Name: ${rowData.package_name}
+		Customer Name: ${rowData.customer_name}
+		Email: ${rowData.customer_email}
+		Phone: ${rowData.phone_number}
+		Order Date: ${rowData.order_date}
+		Quantity: ${rowData.quantity}
+		Total Price: ${rowData.total_price} VND
+		Status: ${rowData.status}
+		Payment Method: ${rowData.payment_method}
+		Transport: ${rowData.transport_option}
+		Insurance: ${rowData.insurance ? "Yes" : "No"}
+		Notes: ${rowData.notes}
+        `;
+
+			doc.text(content, 10, 10);
+			doc.save(`order_${rowData.order_id}.pdf`);
+		}
+	</script> -->
 </body>
 
 </html>
