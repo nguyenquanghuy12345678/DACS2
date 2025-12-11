@@ -12,9 +12,10 @@ if (isset($_POST)) {
         $mail->CharSet  = "utf-8";
         $mail->Host = 'smtp.gmail.com';  //SMTP servers
         $mail->SMTPAuth = true; // Enable authentication
-        $nguoigui = 'huyhuy0510v@gmail.com';
-		 $matkhau = 'uojc fzey alyt raiw';// mật khẩu của tài khoản ngolequanit@gmail.com
-      //  $matkhau = 'gwrgemkqbupsbwuk';
+		
+        $nguoigui = '';
+	    $matkhau = '';// mật khẩu của tài khoản ngolequanit@gmail.com
+      
         $tennguoigui = 'Huy đẹp trai';
         $mail->Username = $nguoigui; // SMTP username
         $mail->Password = $matkhau;   // SMTP password
